@@ -1,0 +1,38 @@
+<!-- <div class="row">
+    <div class="column-first">
+      <input type="text" id="source">
+    </div>
+    <div class="vertical-divider"></div>
+    <div class="column-middle">
+      <select id="select">
+        <option value="prime">isPrime</option>
+        <option value="fibonacci">isFibonacci</option>
+      </select>
+    </div>
+    <div class="vertical-divider"></div>
+    <div class="column-last" id="result">false</div>
+</div> -->
+<mat-grid-list cols="12">
+    <mat-grid-tile colspan="3" rowspan="1">
+
+        <mat-form-field appearance="fill" style="width: 180px;">
+            <input matInput type="text" [(ngModel)]="number" (ngModelChange)="valuechange($event)">
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="6" rowspan="1">
+        <!-- <select id="select">
+            <option value="prime">isPrime</option>
+            <option value="fibonacci">isFibonacci</option>
+          </select> -->
+          <mat-form-field appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select [(value)]="selected" (selectionChange)="selectHandler($event)">
+              <mat-option value="prime">isPrime</mat-option>
+              <mat-option value="fibonacci">isFibonacci</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1" style="width: 300px;">
+        {{result}}
+    </mat-grid-tile>
+  </mat-grid-list>
